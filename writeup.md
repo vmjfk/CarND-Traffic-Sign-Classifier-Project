@@ -29,7 +29,7 @@ The goals / steps of this project are the following:
 
 ####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+You're reading it! and here is a link to my [project code](https://github.com/vmjfk/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
 
 ###Data Set Summary & Exploration
 
@@ -38,40 +38,35 @@ You're reading it! and here is a link to my [project code](https://github.com/ud
 I used the pandas library to calculate summary statistics of the traffic
 signs data set:
 
-* The size of training set is ?
-* The size of the validation set is ?
-* The size of test set is ?
-* The shape of a traffic sign image is ?
-* The number of unique classes/labels in the data set is ?
+
+* Number of training examples = 34799
+* Number of testing examples = 4410
+* Number of validation examples = 12630
+* Image data shape = (32, 32, 3)
+* Number of classes = 43
 
 ####2. Include an exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+Here is an exploratory visualization of the data set. Rather than a histogram or other meta information about the data, I was more interested in seeing the actual images. So I wrote a routine to print slices of the images with their proper names as given in signnames.csv. The results are pictured below.  
 
-![alt text][image1]
+![First 6 validation images][first_6_validation_images.png]
+![First 6 training images][first_6_training_images.png]
+
+This lead to me realize that the validation images were pre-shuffled, but the training images were'nt. I had previosly attempted to train LeNet without shuffling the images, and got accuracy scores of 0.07 or less. Shuffling the images was determined to be critical to the process. 
 
 ###Design and Test a Model Architecture
 
 ####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-As a first step, I decided to convert the images to grayscale because ...
+As a first step, I decided to convert the images to grayscale because when I tried to use color images (32x32x3) I again got accuracy scores of 0.05 or less. It simply didn't work. Rather than force the issue, I greyscaled. 
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![alt text][image2]
+![BW Vs. Color][bwVsColor.png]
 
-As a last step, I normalized the image data because ...
+As a last step, I normalized the image data because LeNet seems to need this. Without it, I got poor accuracy results. 
 
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
-
+I decided to generate additional data by using the test data set provided. 
 
 ####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
@@ -79,12 +74,13 @@ My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| Input         		| 32x32x1 greyscale image   							| 
+| Convolution 5x5     	| 1x1 stride, same padding, outputs 28x28x6 	|
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
+| Max pooling	      	| 2x2 stride,  outputs 10x10x16 				|
+| Convolution 5x5	    | outputs 10x10x16      									|
+| Flatten	| output 400
+| Fully connected		|         									|
 | Softmax				| etc.        									|
 |						|												|
 |						|												|
