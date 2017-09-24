@@ -1,0 +1,94 @@
+EPOCHS,BATCH_SIZE,KEEP_PROB,rate
+20 25 0.0 0.0009
+Initializing variables
+Done initializing variables
+Training...
+
+Validation Accuracy = 0.889
+EPOCH 1 ...
+2017-09-24 14:36:13.293532
+
+Validation Accuracy = 0.889
+EPOCH 2 ...
+2017-09-24 14:36:46.267308
+
+Validation Accuracy = 0.928
+EPOCH 3 ...
+2017-09-24 14:37:19.814707
+
+Validation Accuracy = 0.918
+EPOCH 4 ...
+2017-09-24 14:37:53.976391
+
+Validation Accuracy = 0.924
+EPOCH 5 ...
+2017-09-24 14:38:27.748406
+
+Validation Accuracy = 0.930
+EPOCH 6 ...
+2017-09-24 14:39:01.280356
+
+Validation Accuracy = 0.918
+EPOCH 7 ...
+2017-09-24 14:39:34.245263
+
+Validation Accuracy = 0.909
+EPOCH 8 ...
+2017-09-24 14:40:07.507707
+
+Validation Accuracy = 0.932
+EPOCH 9 ...
+2017-09-24 14:40:40.456812
+
+Validation Accuracy = 0.898
+EPOCH 10 ...
+2017-09-24 14:41:14.031938
+
+Validation Accuracy = 0.923
+EPOCH 11 ...
+2017-09-24 14:41:46.888121
+
+Validation Accuracy = 0.937
+EPOCH 12 ...
+2017-09-24 14:42:20.006891
+
+Validation Accuracy = 0.929
+EPOCH 13 ...
+2017-09-24 14:42:52.948245
+
+Validation Accuracy = 0.928
+EPOCH 14 ...
+2017-09-24 14:43:26.080578
+
+Validation Accuracy = 0.944
+EPOCH 15 ...
+2017-09-24 14:43:58.995303
+
+Validation Accuracy = 0.931
+EPOCH 16 ...
+2017-09-24 14:44:31.980178
+
+Validation Accuracy = 0.940
+EPOCH 17 ...
+2017-09-24 14:45:05.325407
+
+Validation Accuracy = 0.923
+EPOCH 18 ...
+2017-09-24 14:45:38.367356
+
+Validation Accuracy = 0.942
+EPOCH 19 ...
+2017-09-24 14:46:11.563546
+
+Validation Accuracy = 0.934
+EPOCH 20 ...
+2017-09-24 14:46:44.603205
+
+Training Accuracy = 0.998
+2017-09-24 14:46:58.147782
+Validation Accuracy = 0.934
+2017-09-24 14:46:58.851157
+Test Accuracy = 0.917
+2017-09-24 14:47:00.857774
+saving Model
+Model saved
